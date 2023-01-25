@@ -93,6 +93,7 @@ function getPasswordOptions() {
 
   let userPWDOptions = [];
   let pwdArray = [];
+  let password = [];
 
   userPWDOptions = addPasswordParameters();
   pwdLength = userPWDOptions[0];
@@ -126,6 +127,13 @@ function getPasswordOptions() {
   }
   
   console.log(pwdArray)
+
+  for (let i = pwdLength; i > 0; i--) {
+    password +=
+    pwdArray[Math.floor(Math.random() * pwdArray.length)]
+  }
+  
+  console.log(password)
 
 }
 
