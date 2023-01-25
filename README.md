@@ -2,7 +2,7 @@
 
 ## Introduction
 
-After having the week from hell with technology, firstly some king gentlemen putting his spade through my fibre connection at the end of the street leaving me without broadband and relying on 4G, followed by a laptop versus cup of tea incident, where the laptop definitely came off worst, I wasn’t looking forward to this challenge.
+After having the week from hell with technology, firstly some kind gentlemen putting his spade through my fibre connection at the end of the street leaving me without broadband and relying on 4G, followed by a laptop versus cup of tea incident, where the laptop definitely came off worst, I wasn’t looking forward to this challenge.
 
 Given that I was already late submitting, I thought I'd implement some of the features we had learnt post this challenge. It uses plenty of jquery, especially around the jqueryUI, to provide modal form to capture the user’s password criteria. This was a bit of a challenge but got it working and formatted nicely. The actual code for creating a password form the selection was relativity easy. Overall, I enjoyed the challenge, pushing myself on jqueryUI even after a tough week.
 
