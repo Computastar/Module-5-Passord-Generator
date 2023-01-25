@@ -149,7 +149,7 @@ function writePassword(password) {
   return;
 }
 
-
+// Create and launch modal dialog for password parameters
 $(function () {
   var dialog, form,
 
@@ -202,6 +202,7 @@ $(function () {
   });
 });
 
+// Reset slider to default values
 function resetSlider() {
   $( "#slider-range-max" ).slider({
     range: "max",
@@ -210,7 +211,7 @@ function resetSlider() {
     value: 10,
 })};
 
-
+// Get values from modal dialog & set variables
 function addPasswordParameters() {
   allFields.removeClass("ui-state-error");
 
@@ -230,4 +231,14 @@ function addPasswordParameters() {
 
   console.log(pwdLength, lowerCase, upperCase, numeric, specialChar)
   return [pwdLength, lowerCase, upperCase, numeric, specialChar];
+}
+
+password.addEventListener('click', function() { 
+  copyPassword();
+});
+
+function copyPassword() {
+  document.getElementById("password").select();
+  document.execCommand("Copy");
+  alert("Password copied to clipboard!");
 }
