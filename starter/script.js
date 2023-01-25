@@ -91,6 +91,35 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  let userPWDOptions = [];
+  let pwdArray = [];
+
+  userPWDOptions = addPasswordParameters();
+  pwdLength = userPWDOptions[0];
+  lowerCase = userPWDOptions[1];
+  upperCase = userPWDOptions[2];
+  numeric = userPWDOptions[3]
+  specialChar = userPWDOptions[4];
+  
+  console.log(pwdLength);
+  
+  if (lowerCase) {
+    pwdArray = pwdArray.concat(lowerCasedCharacters);
+  }
+  
+  if (upperCase) {
+    pwdArray = pwdArray.concat(upperCasedCharacters);
+  }
+  
+  if (numeric) {
+    pwdArray = pwdArray.concat(numericCharacters);
+  }
+  
+  if (specialChar) {
+    pwdArray = pwdArray.concat(specialCharacters)
+  }
+  
+
 }
 
 // Function for getting a random element from an array
@@ -168,3 +197,24 @@ $(function () {
       dialog.dialog("open");
   });
 });
+
+function addPasswordParameters() {
+  allFields.removeClass("ui-state-error");
+
+  var pwdLength = ($( '#pwdLength').val());
+  var lowerCase = ($( '#lowerCase').is(":checked"));
+  var upperCase = ($( '#upperCase').is(":checked"));
+  var numeric = ($( '#numeric').is(":checked"));
+  var specialChar = ($( '#specialChar').is(":checked"));
+
+   // Because the dialog is not rebuilt from scratch on rerun, set default pwdLength to 10.
+   if (pwdLength ==  "")
+  {
+    pwdLength = 10;
+  } 
+
+  $("#dialog-form").dialog("close");
+
+  console.log(pwdLength, lowerCase, upperCase, numeric, specialChar)
+  return [pwdLength, lowerCase, upperCase, numeric, specialChar];
+}
