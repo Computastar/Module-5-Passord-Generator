@@ -15,6 +15,10 @@ The password can include special characters. If you’re unfamiliar with these, 
 
 ## Instructions
 
+Follow this link to view the website:
+
+[Password Generator](https://computastar.github.io/Module-5-Password-Generator/).
+
 The following image shows the web application's appearance and functionality:
 
 ![Password Generator](./assets/images/05-javascript-challenge-demo.png)
