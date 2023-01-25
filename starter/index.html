@@ -28,10 +28,44 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="createPasswordParameters" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
+
+    <div id="dialog-form" title="Set password parameters">
+      <form>
+          <fieldset>
+              <label for="pwdLength">Select number of characters for password</label>
+              <p></p>
+              <input class="text ui-widget-content ui-corner-all" type="text" id="pwdLength" value="10" readonly
+                  style="border:0; color: black; font-weight: bold;">
+                  <p></p>
+              <div id="slider-range-max"></div>
+              <p></p>
+                  <label class= "checkboxLabel" id="lowerCaseLbl" for="lowerCase">Lower Case
+                  <input class="text ui-widget-content ui-corner-all ui-checkboxradio" type="checkbox" name="lowerCase" id="lowerCase">
+                  </label>
+                  <p></p>
+                  <label class= "checkboxLabel" id="upperCaseLbl" for="upperCase">Upper Case
+                  <input class="text ui-widget-content ui-corner-all" type="checkbox" name="upperCase" id="upperCase">
+                  </label>
+                  <p></p>
+                  <label class= "checkboxLabel" id="numericLbl" for="numeric">Numeric
+                  <input class="text ui-widget-content ui-corner-all" type="checkbox" name="numeric" id="numeric">
+                  </label>
+                  <p></p>
+                  <label class= "checkboxLabel" id="specialCharLbl" for="specialChar">Special Characters
+                  <input class="text ui-widget-content ui-corner-all" type="checkbox" name="specialChar"
+                      id="specialChar">
+                  </label>
+                  <p></p>
+              <!-- Allow form submission with keyboard without duplicating the dialog button -->
+              <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+          </fieldset>
+      </form>
+     </div> 
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -115,4 +115,56 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+//generateBtn.addEventListener('click', writePassword);
+
+$(function () {
+  var dialog, form,
+
+      pwdLength = $("pwdLength"),
+      lowerCase = $("lowerCase"),
+      upperCase = $("upperCase"),
+      numeric = $("numeric"),
+      specialChar = $("specialChar")
+      allFields = $([]).add(pwdLength).add(lowerCase).add(upperCase).add(numeric).add(specialChar);
+   
+
+
+  $( "#slider-range-max" ).slider({
+  range: "max",
+  min: 10,
+  max: 128,
+  value: 10,
+  slide: function( event, ui ) {
+  $( "#pwdLength" ).val( ui.value );
+  }
+  });
+  $( "#pwdLength" ).val( $( "#slider-range-max" ).slider( "value" ) );
+
+
+  dialog = $("#dialog-form").dialog({
+      autoOpen: false,
+      height: 410,
+      width: 350,
+      modal: true,
+    
+      buttons: {
+          "Lets Go...": getPasswordOptions,
+          Cancel: function () {
+              dialog.dialog("close");
+          }
+      },
+      close: function () {
+          form[0].reset();
+          allFields.removeClass("ui-state-error");
+      }
+  });
+
+  form = dialog.find("form").on("submit", function (event) {
+      event.preventDefault();
+      addPasswordParameters();
+  });
+
+  $("#createPasswordParameters").button().on("click", function () {
+      dialog.dialog("open");
+  });
+});
