@@ -164,9 +164,9 @@ $(function () {
 
   $( "#slider-range-max" ).slider({
   range: "max",
-  min: 10,
+  min: 8,
   max: 128,
-  value: 10,
+  value: 8,
   slide: function( event, ui ) {
   $( "#pwdLength" ).val( ui.value );
   }
@@ -206,9 +206,9 @@ $(function () {
 function resetSlider() {
   $( "#slider-range-max" ).slider({
     range: "max",
-    min: 10,
+    min: 8,
     max: 128,
-    value: 10,
+    value: 8,
 })};
 
 // Get values from modal dialog & set variables
@@ -221,10 +221,10 @@ function addPasswordParameters() {
   var numeric = ($( '#numeric').is(":checked"));
   var specialChar = ($( '#specialChar').is(":checked"));
 
-   // Because the dialog is not rebuilt from scratch on rerun, set default pwdLength to 10.
+   // Because the dialog is not rebuilt from scratch on rerun, set default pwdLength to 8.
    if (pwdLength ==  "")
   {
-    pwdLength = 10;
+    pwdLength = 8;
   } 
 
   $("#dialog-form").dialog("close");
