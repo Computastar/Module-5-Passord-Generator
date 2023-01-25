@@ -135,6 +135,10 @@ function getPasswordOptions() {
   
   console.log(password)
 
+  writePassword(password)
+  return password;
+
+
 }
 
 // Function for getting a random element from an array
@@ -151,10 +155,8 @@ function generatePassword() {
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword(password) {
   var passwordText = document.querySelector('#password');
-
   passwordText.value = password;
 }
 
