@@ -141,27 +141,14 @@ function getPasswordOptions() {
 
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
-
 // Write password to the #password input
 function writePassword(password) {
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
+  resetSlider();
+  return;
 }
 
-// Add event listener to generate button
-//generateBtn.addEventListener('click', writePassword);
 
 $(function () {
   var dialog, form,
@@ -214,6 +201,15 @@ $(function () {
       dialog.dialog("open");
   });
 });
+
+function resetSlider() {
+  $( "#slider-range-max" ).slider({
+    range: "max",
+    min: 10,
+    max: 128,
+    value: 10,
+})};
+
 
 function addPasswordParameters() {
   allFields.removeClass("ui-state-error");
