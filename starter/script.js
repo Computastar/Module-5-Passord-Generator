@@ -119,6 +119,13 @@ function getPasswordOptions() {
     pwdArray = pwdArray.concat(specialCharacters)
   }
   
+  if (!lowerCase && !upperCase && !numeric && !specialChar ) {
+    alert("Dude you need to select some characters")
+    addPasswordParameters();
+    return;
+  }
+  
+  console.log(pwdArray)
 
 }
 
